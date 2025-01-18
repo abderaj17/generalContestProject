@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, createSelector } from "@reduxjs/toolkit";
 import axios from 'axios';
 
 export const fetchCoins = createAsyncThunk('coin/fetchCoins', async()=>{
@@ -35,6 +35,11 @@ const coinSlice =  createSlice({
         });
     },
 });
+
+export const selectFilteredData = createSelector(
+    (state) => state.coins.filteredData,
+    (filteredData) => filteredData
+);
 
 export const {searchCoins, sortCoins} = coinSlice.actions;
 export default coinSlice.reducer;
