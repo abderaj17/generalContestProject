@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchCoins } from './redux/coinSlice';
 import SearchSort from './components/SearchSort';
 import Table from './components/Table';
-
-
+import './App.css';
 
 const App = () => {
   const dispatch = useDispatch();
